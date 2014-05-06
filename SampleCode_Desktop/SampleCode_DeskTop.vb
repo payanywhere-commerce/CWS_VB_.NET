@@ -1,5 +1,5 @@
 #Region "DISCLAIMER"
-' Copyright (c) 2004-2010 IP Commerce, INC. - All Rights Reserved.
+' Copyright (c) 2014 PayAnywhere Commerce, LLC - All Rights Reserved.
 ' *
 ' * This software and documentation is subject to and made
 ' * available only pursuant to the terms of an executed license
@@ -7,7 +7,7 @@
 ' * of said agreement. This software may not, in whole or in part,
 ' * be copied, photocopied, reproduced, translated, or reduced to
 ' * any electronic medium or machine-readable form without
-' * prior consent, in writing, from IP Commerce, INC.
+' * prior consent, in writing, from PayAnywhere Commerce, LLC.
 ' *
 ' * Use, duplication or disclosure by the U.S. Government is subject
 ' * to restrictions set forth in an executed license agreement
@@ -19,7 +19,7 @@
 ' * 16-52.227-86; or their equivalent.
 ' *
 ' * Information in this software is subject to change without notice
-' * and does not represent a commitment on the part of IP Commerce.
+' * and does not represent a commitment on the part of PayAnywhere Commerce, LLC.
 ' * 
 ' * Sample Code is for reference Only and is intended to be used for educational purposes. It's the responsibility of 
 ' * the software company to properly integrate into thier solution code that best meets thier production needs. 
@@ -74,7 +74,7 @@ Imports TypeUnitOfMeasure = SampleCode_Desktop.schemas.ipcommerce.com.Ipc.Genera
 Imports TypeISOCurrencyCodeA3 = SampleCode_Desktop.schemas.ipcommerce.com.Ipc.General.WCF.Contracts.Common.External.Txn.TypeISOCurrencyCodeA3
 Imports EntryMode = SampleCode_Desktop.schemas.ipcommerce.com.Ipc.General.WCF.Contracts.Common.External.Txn.EntryMode
 Imports IndustryType = SampleCode_Desktop.schemas.ipcommerce.com.Ipc.General.WCF.Contracts.Common.External.Txn.IndustryType
-Imports PartialApprovalSupportType = schemas.ipcommerce.com.Ipc.General.WCF.Contracts.Common.External.Txn.PartialApprovalSupportType
+Imports PartialApprovalSupportType = SampleCode_Desktop.schemas.ipcommerce.com.Ipc.General.WCF.Contracts.Common.External.Txn.PartialApprovalSupportType
 
 #Region "GENERATING the Proxy with svcUtil.exe"
 ' Generating the proxy using svcutil.exe
@@ -1532,65 +1532,65 @@ Namespace SampleCode
             End If
         End Sub
 
-        Private Sub CmdMagensa_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CmdMagensa.Click
-            Cursor = Cursors.WaitCursor
+        'Private Sub CmdMagensa_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CmdMagensa.Click
+        '    Cursor = Cursors.WaitCursor
 
-            'Check to see if this transaction type is supported
-            If Not SupportedTxnTypes.Authorize Then
-                MessageBox.Show("Authorize Not Supported")
-                Cursor = Cursors.[Default]
-                Return
-            End If
-            'Check to see if the transaction is a PINDebit and that the AuthorizeAndCapture is used.
-            If chkProcessAsPINDebitTxn.Checked Then
-                MessageBox.Show("A PINDebit transaction can only be processed as an AuthorizeAndCapture Transaction")
-                Cursor = Cursors.[Default]
-                Return
-            End If
+        '    'Check to see if this transaction type is supported
+        '    If Not SupportedTxnTypes.Authorize Then
+        '        MessageBox.Show("Authorize Not Supported")
+        '        Cursor = Cursors.[Default]
+        '        Return
+        '    End If
+        '    'Check to see if the transaction is a PINDebit and that the AuthorizeAndCapture is used.
+        '    If chkProcessAsPINDebitTxn.Checked Then
+        '        MessageBox.Show("A PINDebit transaction can only be processed as an AuthorizeAndCapture Transaction")
+        '        Cursor = Cursors.[Default]
+        '        Return
+        '    End If
 
-            'Verify that a workflowId has been selected
-            If Helper.WorkflowID.Length < 1 Then
-                MessageBox.Show("Workflow Id must be selected in order to process a Magensa transaction")
-                Cursor = Cursors.[Default]
-                Return
-            End If
-            'Verify user has selected to use a workflowId
-            If Not ChkUserWorkflowId.Checked Then
-                MessageBox.Show("'Use Workflow Id' needs to be selected")
-                Cursor = Cursors.[Default]
-                Return
-            End If
+        '    'Verify that a workflowId has been selected
+        '    If Helper.WorkflowID.Length < 1 Then
+        '        MessageBox.Show("Workflow Id must be selected in order to process a Magensa transaction")
+        '        Cursor = Cursors.[Default]
+        '        Return
+        '    End If
+        '    'Verify user has selected to use a workflowId
+        '    If Not ChkUserWorkflowId.Checked Then
+        '        MessageBox.Show("'Use Workflow Id' needs to be selected")
+        '        Cursor = Cursors.[Default]
+        '        Return
+        '    End If
 
-            If _bcs IsNot Nothing Then
-                'Process a BankCard Transaction
-                Try
-                    Dim BCtransaction As BankcardTransaction = SetBankCardTxnData()
-                    'Lets get the track Data from the Magensa Reader
-                    Dim MG As New Magensa()
-                    MG.CallingForm(BCtransaction)
-                    MG.ShowDialog(Me)
-                    If Not MG.ProcessTransaction Then
-                        Return
-                    End If
+        '    If _bcs IsNot Nothing Then
+        '        'Process a BankCard Transaction
+        '        Try
+        '            Dim BCtransaction As BankcardTransaction = SetBankCardTxnData()
+        '            'Lets get the track Data from the Magensa Reader
+        '            Dim MG As New Magensa()
+        '            MG.CallingForm(BCtransaction)
+        '            MG.ShowDialog(Me)
+        '            If Not MG.ProcessTransaction Then
+        '                Return
+        '            End If
 
-                    Dim response As New List(Of Response)()
-                    response = Helper.ProcessBCPTransaction(TransactionType.Authorize, BCtransaction, Nothing, Nothing, Nothing, Nothing, _
-                     Nothing, Nothing, Nothing, ChkAcknowledge.Checked, ChkUserWorkflowId.Checked)
-                    If response.Count < 1 Then
-                        Return
-                    End If
-                    Dim BCR As BankcardTransactionResponse = DirectCast(response(0), BankcardTransactionResponse)
-                    'Queue up an authorize for a capture
-                    _authorizeTxn = BCR.TransactionId
-                Catch ex As Exception
-                    MessageBox.Show(ex.Message)
-                Finally
-                    Cursor = Cursors.[Default]
+        '            Dim response As New List(Of Response)()
+        '            response = Helper.ProcessBCPTransaction(TransactionType.Authorize, BCtransaction, Nothing, Nothing, Nothing, Nothing, _
+        '             Nothing, Nothing, Nothing, ChkAcknowledge.Checked, ChkUserWorkflowId.Checked)
+        '            If response.Count < 1 Then
+        '                Return
+        '            End If
+        '            Dim BCR As BankcardTransactionResponse = DirectCast(response(0), BankcardTransactionResponse)
+        '            'Queue up an authorize for a capture
+        '            _authorizeTxn = BCR.TransactionId
+        '        Catch ex As Exception
+        '            MessageBox.Show(ex.Message)
+        '        Finally
+        '            Cursor = Cursors.[Default]
 
-                End Try
-            End If
+        '        End Try
+        '    End If
 
-        End Sub
+        'End Sub
         Private Sub viewTransactionsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles viewTransactionsToolStripMenuItem.Click
             If Helper.SessionToken.Length < 1 Then
                 MessageBox.Show("Please obtain a valid SessionToken before using Transaction Manangement Services (TMS)")
@@ -1628,7 +1628,7 @@ Namespace SampleCode
             cmdManageAccount.Enabled = False
             cmdManageAccountById.Enabled = False
             cmdForcePost.Enabled = False
-            CmdMagensa.Enabled = False
+            'CmdMagensa.Enabled = False
 
             chkL2AuthAndCapture.Enabled = False
             chkL3AuthAndCapture.Enabled = False
@@ -1649,9 +1649,9 @@ Namespace SampleCode
             'Enable buttons that are not availabe based on the selected service
 
             'Check Magensa
-            If Convert.ToBoolean(ConfigurationSettings.AppSettings("TxnData_ProcessMagensaTxn")) And (supportedTxnTypes.Authorize Or supportedTxnTypes.AuthAndCapture) Then
-                CmdMagensa.Enabled = True
-            End If
+            'If Convert.ToBoolean(ConfigurationSettings.AppSettings("TxnData_ProcessMagensaTxn")) And (supportedTxnTypes.Authorize Or supportedTxnTypes.AuthAndCapture) Then
+            '    CmdMagensa.Enabled = True
+            'End If
 
             If supportedTxnTypes.AuthAndCapture Then
                 cmdAuthorizeAndCapture.Enabled = True
@@ -2583,7 +2583,7 @@ Namespace SampleCode
             cmdManageAccount.Enabled = False
             cmdManageAccountById.Enabled = False
             cmdForcePost.Enabled = False
-            CmdMagensa.Enabled = False
+            'CmdMagensa.Enabled = False
 
             cmdForcePost.Enabled = False
 

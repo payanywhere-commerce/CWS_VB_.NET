@@ -1,0 +1,80 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SampleCode_Desktop
+</name>
+</assembly>
+<members>
+<member name="F:SampleCode_Desktop.SampleCode.TransactionManagementServices.components">
+	<summary>
+ Required designer variable.
+ </summary>
+</member><member name="M:SampleCode_Desktop.SampleCode.TransactionManagementServices.Dispose(System.Boolean)">
+	<summary>
+ Clean up any resources being used.
+ </summary>
+	<param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+</member><member name="M:SampleCode_Desktop.SampleCode.TransactionManagementServices.InitializeComponent">
+	<summary>
+ Required method for Designer support - do not modify
+ the contents of this method with the code editor.
+ </summary>
+</member><member name="F:SampleCode_Desktop.SampleCode.SampleCode_DeskTop.components">
+	<summary>
+ Required designer variable.
+ </summary>
+</member><member name="M:SampleCode_Desktop.SampleCode.SampleCode_DeskTop.Dispose(System.Boolean)">
+	<summary>
+ Clean up any resources being used.
+ </summary>
+	<param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+</member><member name="M:SampleCode_Desktop.SampleCode.SampleCode_DeskTop.InitializeComponent">
+	<summary>
+ Required method for Designer support - do not modify
+ the contents of this method with the code editor.
+ </summary>
+</member><member name="F:SampleCode_Desktop.SampleCode.ManageApplicationData.components">
+	<summary>
+ Required designer variable.
+ </summary>
+</member><member name="M:SampleCode_Desktop.SampleCode.ManageApplicationData.Dispose(System.Boolean)">
+	<summary>
+ Clean up any resources being used.
+ </summary>
+	<param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+</member><member name="M:SampleCode_Desktop.SampleCode.ManageApplicationData.InitializeComponent">
+	<summary>
+ Required method for Designer support - do not modify
+ the contents of this method with the code editor.
+ </summary>
+</member><member name="F:SampleCode_Desktop.SampleCode.ManageMerchantProfile.components">
+	<summary>
+ Required designer variable.
+ </summary>
+</member><member name="M:SampleCode_Desktop.SampleCode.ManageMerchantProfile.Dispose(System.Boolean)">
+	<summary>
+ Clean up any resources being used.
+ </summary>
+	<param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+</member><member name="M:SampleCode_Desktop.SampleCode.ManageMerchantProfile.InitializeComponent">
+	<summary>
+ Required method for Designer support - do not modify
+ the contents of this method with the code editor.
+ </summary>
+</member><member name="P:SampleCode_Desktop.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:SampleCode_Desktop.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:SampleCode_Desktop.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

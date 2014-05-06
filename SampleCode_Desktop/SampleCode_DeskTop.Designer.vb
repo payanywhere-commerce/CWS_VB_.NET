@@ -118,7 +118,7 @@ Namespace SampleCode
             Me.label46 = New System.Windows.Forms.Label()
             Me.label45 = New System.Windows.Forms.Label()
             Me.groupBox13 = New System.Windows.Forms.GroupBox()
-            Me.CmdMagensa = New System.Windows.Forms.Button()
+            'Me.CmdMagensa = New System.Windows.Forms.Button()
             Me.ChkAcknowledge = New System.Windows.Forms.CheckBox()
             Me.LnkRequestTransaction = New System.Windows.Forms.LinkLabel()
             Me.label1 = New System.Windows.Forms.Label()
@@ -1181,7 +1181,7 @@ Namespace SampleCode
             '
             'groupBox13
             '
-            Me.groupBox13.Controls.Add(Me.CmdMagensa)
+            ' Me.groupBox13.Controls.Add(Me.CmdMagensa)
             Me.groupBox13.Controls.Add(Me.ChkAcknowledge)
             Me.groupBox13.Controls.Add(Me.LnkRequestTransaction)
             Me.groupBox13.Controls.Add(Me.label1)
@@ -1203,14 +1203,14 @@ Namespace SampleCode
             '
             'CmdMagensa
             '
-            Me.CmdMagensa.Enabled = False
-            Me.CmdMagensa.Location = New System.Drawing.Point(7, 126)
-            Me.CmdMagensa.Name = "CmdMagensa"
-            Me.CmdMagensa.Size = New System.Drawing.Size(127, 23)
-            Me.CmdMagensa.TabIndex = 132
-            Me.CmdMagensa.Text = "Magensa"
-            Me.CmdMagensa.UseVisualStyleBackColor = True
-            '
+            'Me.CmdMagensa.Enabled = False
+            'Me.CmdMagensa.Location = New System.Drawing.Point(7, 126)
+            'Me.CmdMagensa.Name = "CmdMagensa"
+            'Me.CmdMagensa.Size = New System.Drawing.Size(127, 23)
+            'Me.CmdMagensa.TabIndex = 132
+            'Me.CmdMagensa.Text = "Magensa"
+            'Me.CmdMagensa.UseVisualStyleBackColor = True
+            ''
             'ChkAcknowledge
             '
             Me.ChkAcknowledge.AutoSize = True
@@ -1958,7 +1958,7 @@ Namespace SampleCode
 
         Private WithEvents ChkLstTransactionsProcessed As System.Windows.Forms.CheckedListBox
         Private label18 As System.Windows.Forms.Label
-        Private WithEvents CmdMagensa As System.Windows.Forms.Button
+        'Private WithEvents CmdMagensa As System.Windows.Forms.Button
         Friend WithEvents CboWorkFlowIdsByServiceId As System.Windows.Forms.ComboBox
         Private WithEvents Label19 As System.Windows.Forms.Label
         Private WithEvents ChkUserWorkflowId As System.Windows.Forms.CheckBox

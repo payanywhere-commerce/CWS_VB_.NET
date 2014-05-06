@@ -1,0 +1,11 @@
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\bin\Debug\SampleCode_Desktop.exe.config
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\obj\Debug\SampleCode_Desktop.Resources.resources
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\obj\Debug\SampleCode_Desktop.SampleCode.SampleCode_DeskTop.resources
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\obj\Debug\SampleCode_Desktop.SampleCode.TransactionManagementServices.resources
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\obj\Debug\SampleCode_Desktop.vbproj.GenerateResource.Cache
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\bin\Debug\SampleCode_Desktop.exe
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\bin\Debug\SampleCode_Desktop.pdb
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\bin\Debug\SampleCode_Desktop.xml
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\obj\Debug\SampleCode_Desktop.exe
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\obj\Debug\SampleCode_Desktop.xml
+C:\Users\zbowles\Documents\CWS_VB_.NET\SampleCode_Desktop\obj\Debug\SampleCode_Desktop.pdb
