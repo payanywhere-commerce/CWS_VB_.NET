@@ -409,7 +409,7 @@ Namespace SampleCode
                     Dim ECKTransaction As ElectronicCheckingTransaction = SetElectronicCheckTxnData()
 
                     'If a modified account or routing number is returned, those numbers should be used for the check transaction.  
-                    'Good for verifying the info before running the charge – like when you initially set-up a recurring payment.
+                    'Good for verifying the info before running the charge ï¿½ like when you initially set-up a recurring payment.
                     If ECKTransaction.TenderData.CheckData.AccountNumber <> _queryAccountTxn.ModifiedAccountNumber Then
                         ECKTransaction.TenderData.CheckData.AccountNumber = _queryAccountTxn.ModifiedAccountNumber
                     End If
@@ -2178,22 +2178,22 @@ Namespace SampleCode
                     '                        For AuthorizeAndCapture the level2/3 goes in immediately as there is no follow up transaction.
                     '                        For Authorize followed by Capture the level 2/3 goes in the Capture, never in the Authorize.  
                     '                        The schema requires BaseAmt and OrderNum for level 2.  Amt, Quantity, SeqNum, TaxIncludedInd, and UnitPrice are all required for level 3.
-                    '                        • Of course you must have level 2 in order to have level 3.
-                    '                        Set TxnData.CmrclCardReq to “Enable” since some providers get that value and will return the card type in the response in CmrclCardResp.  Not all providers do this but they should always set it.  
+                    '                        ï¿½ Of course you must have level 2 in order to have level 3.
+                    '                        Set TxnData.CmrclCardReq to ï¿½Enableï¿½ since some providers get that value and will return the card type in the response in CmrclCardResp.  Not all providers do this but they should always set it.  
                     '                        The value is returned in the response and can be used to determine whether or not to submit level 2.
                     '
                     '                        Level 2 requirements for Ecomm/Moto:
-                    '                        • TaxExempt
-                    '                        • DestinationPostal
-                    '                        • ShipFromPostalCode
+                    '                        ï¿½ TaxExempt
+                    '                        ï¿½ DestinationPostal
+                    '                        ï¿½ ShipFromPostalCode
                     '                        Level 2 requirements for Retail:
-                    '                        • DestinationPostal
-                    '                        • TaxExempt                   
+                    '                        ï¿½ DestinationPostal
+                    '                        ï¿½ TaxExempt                   
                     '                        Level 3 requirements for Ecomm/Moto:
-                    '                        • Desc
-                    '                        • ProductCode
-                    '                        • UnitOfMeasure
-                    '                        • only 98 items allowed
+                    '                        ï¿½ Desc
+                    '                        ï¿½ ProductCode
+                    '                        ï¿½ UnitOfMeasure
+                    '                        ï¿½ only 98 items allowed
                     '                    
 
 
@@ -2270,7 +2270,7 @@ Namespace SampleCode
 
                     BCtransaction.InterchangeData.CurrentInstallmentNumber = 1
                     'If this is a follow-up recuring payment the value needs to be greater than 1. 
-                    'Any time BillPayInd is set to either “Deferred_Billing”, “Installment” or “Recurring”, CustPresentFlag should be set to “Bill_Payment"
+                    'Any time BillPayInd is set to either ï¿½Deferred_Billingï¿½, ï¿½Installmentï¿½ or ï¿½Recurringï¿½, CustPresentFlag should be set to ï¿½Bill_Payment"
                     If BCtransaction.InterchangeData.BillPayment = BillPayment.DeferredBilling Or BCtransaction.InterchangeData.BillPayment = BillPayment.Installment Or BCtransaction.InterchangeData.BillPayment = BillPayment.Recurring Then
                         TxnData.CustomerPresent = CustomerPresent.BillPayment
                     End If
@@ -2722,7 +2722,7 @@ Namespace SampleCode
             MessageBox.Show("The Identity token and PTLS SocketId are values provided by your solution consultant for both Sandbox testing as well as Production deployment." & " For convenience these values are filled out automaticaly in the Sample Code for Sandbox testing. In production you'll need to update each value." & " Please also note that the Identity Token expires at 3 years or if a security breach is detected.")
 
             'NOTE : The following values changes from Sandbox to Production.  These values are provided by your Solution Consultant
-            PtlsSocketId = "MIIEwjCCA6qgAwIBAgIBEjANBgkqhkiG9w0BAQUFADCBsTE0MDIGA1UEAxMrSVAgUGF5bWVudHMgRnJhbWV3b3JrIENlcnRpZmljYXRlIEF1dGhvcml0eTELMAkGA1UEBhMCVVMxETAPBgNVBAgTCENvbG9yYWRvMQ8wDQYDVQQHEwZEZW52ZXIxGjAYBgNVBAoTEUlQIENvbW1lcmNlLCBJbmMuMSwwKgYJKoZIhvcNAQkBFh1hZG1pbkBpcHBheW1lbnRzZnJhbWV3b3JrLmNvbTAeFw0wNjEyMTUxNzQyNDVaFw0xNjEyMTIxNzQyNDVaMIHAMQswCQYDVQQGEwJVUzERMA8GA1UECBMIQ29sb3JhZG8xDzANBgNVBAcTBkRlbnZlcjEeMBwGA1UEChMVSVAgUGF5bWVudHMgRnJhbWV3b3JrMT0wOwYDVQQDEzRFcWJwR0crZi8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vLy8vL0E9MS4wLAYJKoZIhvcNAQkBFh9zdXBwb3J0QGlwcGF5bWVudHNmcmFtZXdvcmsuY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD7BTLqXah9t6g4W2pJUfFKxJj/R+c1Dt5MCMYGKeJCMvimAJOoFQx6Cg/OO12gSSipAy1eumAqClxxpR6QRqO3iv9HUoREq+xIvORxm5FMVLcOv/oV53JctN2fwU2xMLqnconD0+7LJYZ+JT4z3hY0mn+4SFQ3tB753nqc5ZRuqQIDAQABo4IBVjCCAVIwCQYDVR0TBAIwADAdBgNVHQ4EFgQUk7zYAajw24mLvtPv7KnMOzdsJuEwgeYGA1UdIwSB3jCB24AU3+ASnJQimuunAZqQDgNcnO2HuHShgbekgbQwgbExNDAyBgNVBAMTK0lQIFBheW1lbnRzIEZyYW1ld29yayBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkxCzAJBgNVBAYTAlVTMREwDwYDVQQIEwhDb2xvcmFkbzEPMA0GA1UEBxMGRGVudmVyMRowGAYDVQQKExFJUCBDb21tZXJjZSwgSW5jLjEsMCoGCSqGSIb3DQEJARYdYWRtaW5AaXBwYXltZW50c2ZyYW1ld29yay5jb22CCQD/yDY5hYVsVzA9BglghkgBhvhCAQQEMBYuaHR0cHM6Ly93d3cuaXBwYXltZW50c2ZyYW1ld29yay5jb20vY2EtY3JsLnBlbTANBgkqhkiG9w0BAQUFAAOCAQEAFk/WbEleeGurR+FE4p2TiSYHMau+e2Tgi+L/oNgIDyvAatgosk0TdSndvtf9YKjCZEaDdvWmWyEMfirb5mtlNnbZz6hNpYoha4Y4ThrEcCsVhfHLLhGZZ1YaBD+ZzCQA7vtb0v5aQb25jX262yPVshO+62DPxnMiJevSGFUTjnNisVniX23NVouUwR3n12GO8wvzXF8IYb5yogaUcVzsTIxEFQXEo1PhQF7JavEnDksVnLoRf897HwBqcdSs0o2Fpc/GN1dgANkfIBfm8E9xpy7k1O4MuaDRqq5XR/4EomD8BWQepfJY0fg8zkCfkuPeGjKkDCitVd3bhjfLSgTvDg=="
+            PtlsSocketId = "MIIFCzCCA/OgAwIBAgICAoEwDQYJKoZIhvcNAQEFBQAwgbExNDAyBgNVBAMTK0lQIFBheW1lbnRzIEZyYW1ld29yayBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkxCzAJBgNVBAYTAlVTMREwDwYDVQQIEwhDb2xvcmFkbzEPMA0GA1UEBxMGRGVudmVyMRowGAYDVQQKExFJUCBDb21tZXJjZSwgSW5jLjEsMCoGCSqGSIb3DQEJARYdYWRtaW5AaXBwYXltZW50c2ZyYW1ld29yay5jb20wHhcNMTMwODI2MTcxMDI3WhcNMjMwODI0MTcxMDI3WjCBjDELMAkGA1UEBhMCVVMxETAPBgNVBAgTCENvbG9yYWRvMQ8wDQYDVQQHEwZEZW52ZXIxGjAYBgNVBAoTEUlQIENvbW1lcmNlLCBJbmMuMT0wOwYDVQQDEzR0ZHNwM25TZ0FJQUFBUDhBSCtDWUFBQUVBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUE9MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtn6ILI78EaOLcWrmI9RZf8Vj+3P/WcrDLimSyJJH/8LnIBbXNkiKcZSMg/KHqNLAtq/ncYqZcicgAfaoSbj9FxKGIXTDEICriv/i8sQIGFhIwW/V6H02E8SpWjdCQO9EUUaFPUVMhHfiabwJ3B0VODsQfVuG7mbrAvD/wAqiUVR2Q0rpgHkToCkytdhMlkXiFtnfy4nnoFnI6c5cmsQU7AZgI6Zr08pDMN9y3uSRGSJIzdcTohBA1qb8C4+ZVRCmwCfQZiBHxjC8c5DTiGlPQVEDfRjKXm6ffqBKCttX7qCeB0s57iob0Q7ucz8NfoWtY8dZVzMhYH8obU/dSXaZ6wIDAQABo4IBTjCCAUowCQYDVR0TBAIwADAdBgNVHQ4EFgQUJ64+T3k9d5nWfplPlxVZsN382XUwgeYGA1UdIwSB3jCB24AU3+ASnJQimuunAZqQDgNcnO2HuHShgbekgbQwgbExNDAyBgNVBAMTK0lQIFBheW1lbnRzIEZyYW1ld29yayBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkxCzAJBgNVBAYTAlVTMREwDwYDVQQIEwhDb2xvcmFkbzEPMA0GA1UEBxMGRGVudmVyMRowGAYDVQQKExFJUCBDb21tZXJjZSwgSW5jLjEsMCoGCSqGSIb3DQEJARYdYWRtaW5AaXBwYXltZW50c2ZyYW1ld29yay5jb22CCQD/yDY5hYVsVzA1BgNVHR8ELjAsMCqgKKAmhiRodHRwOi8vY3JsLmlwY29tbWVyY2UuY29tL2NhLWNybC5jcmwwDQYJKoZIhvcNAQEFBQADggEBAJrku2QD0T/0aT+jfFJA947Vf7Vu/6S1OxUGhMipx6z/izXZ+o4fK/Nsg0G39KvfxippFG/3MUo621dwXwtqq9SM72zy9ry9E0ptmEiG8X8bSVOyGj4MqyExCPs9LgloV5GgewqYRgq2hmbXOv8Gw7EeXGCfnQ+eROxGu1+p3ZWUnGMQnBbayg43npcHYfyLFHOzd57pj6ncYoxY3kun5GLMLr6tJXKpPNvbM5lAOzcAmKviPMCM2T53UzJlsRdVvCbnkrc5cYqN4l01elqr3MSsj6BJ+JqIqViFrYYkD34THKO8c+wZGb8IN+NJAVre9YOvt5+Cvbbd5ik0UQ+YQNM="
             'Value provided by solution consultant. You'll have one idenityToken for Sandbox and a different one for production. The value needs 
             ' to be configurable as the token expires every 3 years or if a security breach is detected.
             txtIdentityToken.Text = ConfigurationSettings.AppSettings("IdentityToken")
